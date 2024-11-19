@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Details</title>
+</head>
+<body>
+    <div class="guest-details">
+        <h1><%= guest.name %></h1> <!-- Display fruit name -->
+        <!-- Conditional rendering based on fruit's readiness -->
+        <% if (guest.generalPassAccess) { %>
+            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+          <% } else { %>
+            <p>guest.name is not authorized on the premises</p>
+          <% } %>
+
+          <% if (guest.sportsPassAccess) { %>
+            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+            <p>and has exclusive access to yacht races, great sports bar </p>
+          <% } else { %>
+            <p>guest.name is not authorized on the premises</p>
+          <% } %>
+
+          <% if (guest.premierPassAccess) { %>
+            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+            <p>guest.name has exclusive access to executive dining wing, grand welcome</p>
+          <% } else { %>
+            <p>guest.name is not authorized on the premises</p>
+          <% } %>
+
+          <% if (guest.allAccessPass) { %>
+            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+            <p>and has exclusive access to yacht races, great sports bar </p>
+            <p>guest.name has exclusive access to executive dining wing, grand welcome</p>
+          <% } else { %>
+            <p>guest.name is not authorized on the premises</p>
+          <% } %>
+    </div>
+
+    <div class="admin-actions">
+        <form
+            class="delete-form"
+            action="/guestlist/<%=guest._id%>?_method=DELETE"
+            method="POST"
+            >
+            <button
+                class="delete-button"
+                type="submit"
+                >
+                Delete <%= guest.name %>
+            </button>
+        </form>
+    
+        <a class="edit-link" href="/guestlist/<%= guest._id %>/edit">
+            <div class="edit-text">Edit <%= guest.name %></div>
+          </a>
+    </div>    
+</body>
+</html>

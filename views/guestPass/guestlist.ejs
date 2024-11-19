@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestlist</title>
+</head>
+<body>
+    <h1>Guest List</h1>
+    <ul>
+        <% guests.forEach(guests => { %>
+            <li>
+                 <a href="/guestlist/<%= guest._id %>">
+                    <%= guests.name %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+
+</body>
+</html>
