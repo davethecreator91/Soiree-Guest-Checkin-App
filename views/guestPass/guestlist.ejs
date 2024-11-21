@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guestlist</title>
+    <title>Guest list</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
     <h1>Guest List</h1>
     <ul>
-        <% guests.forEach(guests => { %>
+        <% guestsID.forEach(guestsID => { %>
             <li>
-                 <a href="/guestlist/<%= guest._id %>">
-                    <%= guests.name %>
+                <p>
+                 <a href="/guestlist/<%= guestsID._id %>">
+                    <%= guestsID.name %>
                 </a>
+                <%= guestsID.passType %></p>
             </li>
         <% }); %>
     </ul>
 
+    <div>
+        <a href="/guestCheckIn">Guest Check In</a>
+    </div>
 </body>
 </html>

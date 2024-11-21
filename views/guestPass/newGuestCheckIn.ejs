@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Check-In</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
     <h1>Guest Check-In</h1>
 
+
+
+<form action="/guestCheckIn" method="post">
     <div>
         <label for="Name of Guest">Name</label>
         <input type="text" name="name" id="name">
     </div>
-
-<form>
    <div class="checkbox-div">
         <label for="General-Pass">General Pass Holder?</label>
-        <input type="checkbox" name="General-Pass" id="General-Pass"/>
+        <input type="checkbox" name="generalPassAccess" id="General-Pass"/>
         <label for="Sports-Pass">Sports Pass Holder?</label>
-        <input type="checkbox" name="Sports-Pass" id="Sports-Pass"/>
+        <input type="checkbox" name="sportsPassAccess" id="Sports-Pass"/>
         <label for="Premier-Pass">Premier Pass Holder?</label>
-        <input type="checkbox" name="Premier-Pass" id="Premier-Pass"/>
+        <input type="checkbox" name="premierPassAccess" id="Premier-Pass"/>
         <label for="All-Access-Pass">All Access Pass Holder?</label>
-        <input type="checkbox" name="All-Access-Pass" id="All-Access-Pass"/>
+        <input type="checkbox" name="allAccessPass" id="All-Access-Pass"/>
       </div>
       <button type="submit" href="guestpass/guestlist.ejs">Submit</button>
 </form>

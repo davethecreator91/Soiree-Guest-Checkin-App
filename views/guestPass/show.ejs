@@ -4,56 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
     <div class="guest-details">
-        <h1><%= guest.name %></h1> <!-- Display fruit name -->
-        <!-- Conditional rendering based on fruit's readiness -->
-        <% if (guest.generalPassAccess) { %>
-            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+        <h1><%= guestID.name %></h1> <!-- Display guest name -->
+        <h3><%= guestID.passType %></h3>
+        <!-- Conditional rendering based on guest's readiness -->
+        <!-- <% if (guestID.generalPassAccess) { %>
+            <p>guestID.name has access to main stage, dining corridor, plaza lounge</p>
           <% } else { %>
-            <p>guest.name is not authorized on the premises</p>
+            <p>guestID.name is not authorized on the premises</p>
           <% } %>
 
-          <% if (guest.sportsPassAccess) { %>
-            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+          <% if (guestID.sportsPassAccess) { %>
+            <p>guestID.name has access to main stage, dining corridor, plaza lounge</p>
             <p>and has exclusive access to yacht races, great sports bar </p>
           <% } else { %>
-            <p>guest.name is not authorized on the premises</p>
+            <p>guestID.name is not authorized on the premises</p>
           <% } %>
 
-          <% if (guest.premierPassAccess) { %>
-            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
-            <p>guest.name has exclusive access to executive dining wing, grand welcome</p>
+          <% if (guestID.premierPassAccess) { %>
+            <p>guestID.name has access to main stage, dining corridor, plaza lounge</p>
+            <p>guestID.name has exclusive access to executive dining wing, grand welcome</p>
           <% } else { %>
-            <p>guest.name is not authorized on the premises</p>
+            <p>guestID.name is not authorized on the premises</p>
           <% } %>
 
-          <% if (guest.allAccessPass) { %>
-            <p>guest.name has access to main stage, dining corridor, plaza lounge</p>
+          <% if (guestID.allAccessPass) { %>
+            <p>guestID.name has access to main stage, dining corridor, plaza lounge</p>
             <p>and has exclusive access to yacht races, great sports bar </p>
-            <p>guest.name has exclusive access to executive dining wing, grand welcome</p>
+            <p>guestID.name has exclusive access to executive dining wing, grand welcome</p>
           <% } else { %>
-            <p>guest.name is not authorized on the premises</p>
-          <% } %>
+            <p>guestID.name is not authorized on the premises</p>
+          <% } %> -->
     </div>
-
     <div class="admin-actions">
         <form
             class="delete-form"
-            action="/guestlist/<%=guest._id%>?_method=DELETE"
+            action="/guestlist/<%=guestID._id%>?_method=DELETE"
             method="POST"
             >
             <button
                 class="delete-button"
                 type="submit"
                 >
-                Delete <%= guest.name %>
+                Delete <%= guestID.name %>
             </button>
         </form>
     
-        <a class="edit-link" href="/guestlist/<%= guest._id %>/edit">
-            <div class="edit-text">Edit <%= guest.name %></div>
+        <a class="edit-link" href="/guestlist/<%= guestID._id %>/edit">
+            <div class="edit-text">Edit <%= guestID.name %></div>
           </a>
     </div>    
 </body>
